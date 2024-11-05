@@ -1,0 +1,96 @@
+<section>
+    <h2>Listes des exoplanètes</h2>
+    <h3>Filtre :</h3>
+    <form action="/exoplanets/filtres" name="hCLass">
+        <select name="hClass" id="hClass">
+            <option value="Mésoplanète">Mésoplanète</option>
+            <option value="Non habitable">Non habitable</option>
+            <option value="Thermoplanète">Thermoplanète</option>
+            <option value="Psychroplanète">Psychroplanète</option>
+        </select>
+        <input type="submit" name="filtre" value="Filtrer par hclass">
+        <input type="number" name="discoveryYear" value="2024">
+        <input type="submit" name="filtre" value="Filtrer par année">
+    </form>          
+    <table>
+        <thead>
+            <tr>
+                <th>id Exoplanète</th>
+                <th>Nom exoplanète</th>
+                <th>hClass</th>
+                <th>Année de découverte</th>
+                <th>image</th>
+                <th></th>
+            </tr>
+        </thead>
+             {{#each exoplanetes}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td><a href="/exoplanets/details?id={{this.id}}"> {{this.uniqueName}}</a></td>
+                <td>{{this.hClass}}</td>
+                <td>{{this.discoveryYear}}</td>
+                <td>
+                    {{#if this.image_file}}
+                        <img src="images/{{this.image_file}}" alt="image">
+                    {{else}}
+                        <img src="images/No_image_available.png" alt="pas d'image">
+                    {{/if}}
+                </td>
+                <td><form action="/exoplanets/updateview">
+                    <input type="hidden" name="id" value="{{this.id}}">
+                    <input type="submit" value="Mise à jour">
+               </form>
+               <form  method="post" action="/exoplanets/delete">
+                    <input type="hidden" name="id" value="{{this.id}}">
+                    <input type="submit" value="Supprimer">
+               </form>
+               </td>
+            </tr>
+            {{/each}}
+    </table>
+</section>
+<section>
+    <h2>Ajouter une Exoplanète découverte</h2>
+    <form method="post" action="/exoplanets/addexoplanete" enctype="multipart/form-data">
+        <div>
+        <label>Nom de l'exoplanète découverte :</label>
+        <input type="text" name="uniqueName">
+        </div>
+        <label>Classe Habitable de l'exoplanète :</label>
+        <select name="hClass" id="hClass">
+            <option value="Mésoplanète">Mésoplanète</option>
+            <option value="Non habitable">Non habitable</option>
+            <option value="Thermoplanète">Thermoplanète</option>
+            <option value="Psychroplanète">Psychroplanète</option>
+        </select>
+        <div>
+        <label>L'année de découverte</label>
+        <input type="number" name="discoveryYear" value="2024">
+        </div>
+        <div>
+            <label>Image de l'exoplanete : </label>
+            <input type="file" name="image_exoplanete">
+        </div>
+        <input type="submit" value="Envoyer">
+    </form>
+</section>
+<section>
+    <h2>Recherche d'une Exoplanète déjà découverte</h2>
+    <form action="/exoplanets/searchexoplanet">
+    <input type="text" name="nomexo">
+    <input type="submit">
+    </form>
+    {{#if schearchdo}}
+        {{#unless exoplanetes}}
+            {{#if error1}}
+                <p class="errormessage">Aucune exoplanète trouvée</p>
+            {{else}}
+                <p class="errormessage">Veuillez entrer 3 caractères au minimum</p>
+            {{/if}}
+        {{/unless}}
+    {{/if}}
+    <h3>Erreurs : </h3>
+    {{#if error}}
+        <p class="errormessage">{{error}}</p>
+    {{/if}}
+</section>

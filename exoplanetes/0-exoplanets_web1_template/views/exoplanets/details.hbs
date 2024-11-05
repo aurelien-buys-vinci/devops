@@ -1,0 +1,30 @@
+<section>
+    <h2>Détails d'une Exoplanète</h2>
+    {{#if error}}
+    <p class="errormessage"> Erreur l'id n'est pas un entier</p>
+    {{else}}
+        {{#if exoplanet}}
+        <table>
+            <tr>
+                <th>ID Exoplanète </th>
+                <th>Nom Exoplanète</th>
+                <th>hClass</th>
+                <th>Année de découverte</th>
+                <th>IST</th>
+                <th>pClass</th>
+            </tr>
+            <tr>
+                <td>{{exoplanet.id}} </td>
+                <td>{{exoplanet.uniqueName}} </td>
+                <td>{{exoplanet.hClass}} </td>
+                <td>{{exoplanet.discoveryYear}} </td>
+                <td>{{exoplanet.IST}} </td>
+                <td>{{exoplanet.pClass}} </td>
+            </tr>
+        </table>
+        {{else}}
+            <p class="errormessage2"> Aucune Exoplanète pour cet ID !</p>
+        {{/if}}
+    {{/if}}
+
+</section>

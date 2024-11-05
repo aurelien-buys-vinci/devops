@@ -1,0 +1,19 @@
+<section>
+    <h2>Films liés a l'espace</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Réalisateur</th>
+                <th>durée (minute)</th>
+            </tr>
+        </thead>
+        {{#each films}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.realisateur}}</td>
+                <td>{{this.duree}}</td>
+            </tr>
+        {{/each}}
+    </table>
+</section>

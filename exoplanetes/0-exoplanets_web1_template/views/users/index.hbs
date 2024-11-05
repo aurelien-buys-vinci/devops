@@ -1,0 +1,17 @@
+<section>
+    <h2>Connexion utilisateur</h2>
+    <form action="/users/login">
+        <div>
+        <label>Login membre :</label>
+        <input type="text" name="loginMember">
+        </div>
+        <div>
+        <label>Password membre :</label>
+        <input type="password" name="password">
+        </div>
+        <input type="submit" value="Me connecter">
+    </form>
+    {{#if session.error1}}
+        <p class="errormessage">{{session.error1}}</p>
+    {{/if}}
+</section>
