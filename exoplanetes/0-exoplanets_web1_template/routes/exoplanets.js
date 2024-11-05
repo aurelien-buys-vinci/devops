@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
         '-' + date.getSeconds();
         cb(null, uniquePrefix + '-' + file.originalname);
     }
-})
+});
 const upload = multer({ storage: storage });
 
 router.get('/', (req, res) => {
@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
 router.post('/addexoplanete',upload.single('image_exoplanete') ,(req, res) =>{
     console.log("tu passes par la route /addexoplanete");
     if (!validator.isLength(req.body.uniqueName,{min : 3, max : 100})) {
-      res.redirect("/exoplanets?error=Le nom d'une exoplanète doit faire entre 3 et 100 caractères")
+      res.redirect("/exoplanets?error=Le nom d'une exoplanète doit faire entre 3 et 100 caractères");
     }
     Exoplanet.addexoplanetes(req.body.uniqueName,req.body.hClass,req.body.discoveryYear, (req.file.filename));
     res.redirect("/exoplanets");
@@ -49,8 +49,8 @@ router.get('/searchexoplanet', (req, res) =>{
     
     res.render("exoplanets/index.hbs", {exoplanetes : resultatRechere, error1, schearchdo});
 });
-  
-router.get('/details', (req, res) => {
+
+function handleDetailsRoute(req, res){
     console.log("tu passes par la route /exoplanets/details");
     let error = false;
     let exoplanet =[];
@@ -62,7 +62,9 @@ router.get('/details', (req, res) => {
       exoplanet = Exoplanet.findByID(id);
     }
     res.render('exoplanets/details.hbs', {error,exoplanet});
-});
+}
+  
+router.get('/details', handleDetailsRoute);
 
 router.get('/filtres', (req, res) => {
     console.log("tu passes par la route /exoplanets/filtres");
