@@ -6,6 +6,9 @@ export class Main {
         if (hours === 2) {
             return "RR";
         }
+        if (hours === 4) {
+            return "RRRR";
+        }
         return "";
     };
 }
