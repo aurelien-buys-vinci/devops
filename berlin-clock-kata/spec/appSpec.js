@@ -37,5 +37,9 @@ describe('list of test for simpleHours function', function() {
         const resultat = main.simpleHours(10);
         expect(resultat).toBe("");
     });
-    
+
+    it('should return "R" for 11 hours', function() {
+        const resultat = main.simpleHours(11);
+        expect(resultat).toBe("R");
+    });
 });
