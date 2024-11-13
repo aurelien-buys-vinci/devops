@@ -11,14 +11,14 @@ export class Main {
         let result = "";
         for (let i = 0; i < parseInt(hours/5); i++) {
             result += "R";
-        }
+        };
         return result;
     };
 
     secondsLamp(seconds) {
-        if (seconds === 1 || seconds === 3) {
-            return "";
+        if(seconds % 2 === 0) {
+            return "R";
         }
-        return "R";
+        return "";
     };    
 }
