@@ -76,4 +76,9 @@ describe('list of test for blockOfFiveHours function', function() {
         const resultat = main.blockOfFiveHours(1);
         expect(resultat).toBe("");
     });
+
+    it('should return "" for 4 hours', function() {
+        const resultat = main.blockOfFiveHours(4);
+        expect(resultat).toBe("");
+    });
 });    
