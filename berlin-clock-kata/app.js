@@ -8,7 +8,7 @@ export class Main {
     };
 
     blockOfFiveHours(hours) {
-        if(hours >= 11) {
+        if(hours >= 10) {
             return "RR";
         }
         if(hours >= 5) {
