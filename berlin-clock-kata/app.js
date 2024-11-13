@@ -6,4 +6,8 @@ export class Main {
         }
         return result;
     };
+
+    blockOfFiveHours(hours) {
+        return "";
+    }
 }

@@ -63,3 +63,13 @@ describe('list of test for simpleHours function', function() {
         expect(resultat).toBe("RRRR");
     });
 });
+
+describe('list of test for blockOfFiveHours function', function() {
+    let main = new Main();
+
+    it('should return "" for 0 hours', function() {
+        const resultat = main.blockOfFiveHours();
+        expect(resultat).toBe("");
+    });
+
+});    
