@@ -8,18 +8,10 @@ export class Main {
     };
 
     blockOfFiveHours(hours) {
-        if(hours >= 20) {
-            return "RRRRR";
+        let result = "";
+        for (let i = 0; i < parseInt(hours/5); i++) {
+            result += "R";
         }
-        if(hours >= 15) {
-            return "RRR";
-        }
-        if(hours >= 10) {
-            return "RR";
-        }
-        if(hours >= 5) {
-            return "R";
-        }
-        return "";
+        return result;
     }
 }
