@@ -1,1 +1,2 @@
-const Main = require('../app.js');
+import { Main } from '../app.js';
+
