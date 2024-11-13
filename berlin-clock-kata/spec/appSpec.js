@@ -12,4 +12,9 @@ describe('Main', function() {
         const resultat = main.simpleHours(1);
         expect(resultat).toBe("R");
     });
+
+    it('should return "RR" for 2 hours', function() {
+        const resultat = main.simpleHours(2);
+        expect(resultat).toBe("RR");
+    });
 });
