@@ -141,4 +141,14 @@ describe('list of test for blockOfFiveHours function', function() {
         const resultat = main.blockOfFiveHours(24);
         expect(resultat).toBe("RRRR");
     });
-});    
+});
+
+describe('list of test for secondLamp function', function() {
+    let main = new Main();
+
+    it('should return "R" for 0 seconds', function() {
+        const resultat = main.secondsLamp(0);
+        expect(resultat).toBe("R");
+    });
+
+});

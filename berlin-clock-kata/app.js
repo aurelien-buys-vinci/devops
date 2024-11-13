@@ -13,5 +13,9 @@ export class Main {
             result += "R";
         }
         return result;
-    }
+    };
+
+    secondsLamp(seconds) {
+        return "R";
+    };    
 }
