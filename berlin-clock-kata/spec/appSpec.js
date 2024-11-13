@@ -13,14 +13,13 @@ describe('Main', function() {
         expect(resultat).toBe("R");
     });
 
-    it('should return "RR" for 2 hours', function() {
-        const resultat = main.simpleHours(2);
-        expect(resultat).toBe("RR");
-    });
-
-
     it('should return "RRRR" for 4 hours', function() {
         const resultat = main.simpleHours(4);
         expect(resultat).toBe("RRRR");
+    });
+
+    it('should return "" for 5 hours', function() {
+        const resultat = main.simpleHours(5);
+        expect(resultat).toBe("");
     });
 });
