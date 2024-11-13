@@ -8,6 +8,9 @@ export class Main {
     };
 
     blockOfFiveHours(hours) {
+        if(hours == 5) {
+            return "R";
+        }
         return "";
     }
 }
