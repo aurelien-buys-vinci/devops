@@ -160,4 +160,9 @@ describe('list of test for secondLamp function', function() {
         const resultat = main.secondsLamp(2);
         expect(resultat).toBe("R");
     });
+
+    it('should return "" for 3 seconds', function() {
+        const resultat = main.secondsLamp(3);
+        expect(resultat).toBe("");
+    });
 });

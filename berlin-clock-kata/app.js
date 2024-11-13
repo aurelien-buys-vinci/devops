@@ -16,7 +16,7 @@ export class Main {
     };
 
     secondsLamp(seconds) {
-        if (seconds === 1) {
+        if (seconds === 1 || seconds === 3) {
             return "";
         }
         return "R";
