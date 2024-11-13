@@ -151,4 +151,8 @@ describe('list of test for secondLamp function', function() {
         expect(resultat).toBe("R");
     });
 
+    it('should return "" for 1 seconds', function() {
+        const resultat = main.secondsLamp(1);
+        expect(resultat).toBe("");
+    });
 });
