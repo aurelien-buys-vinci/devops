@@ -32,4 +32,10 @@ describe('list of test for simpleHours function', function() {
         const resultat = main.simpleHours(9);
         expect(resultat).toBe("RRRR");
     });
+
+    it('should return "" for 10 hours', function() {
+        const resultat = main.simpleHours(10);
+        expect(resultat).toBe("");
+    });
+    
 });
