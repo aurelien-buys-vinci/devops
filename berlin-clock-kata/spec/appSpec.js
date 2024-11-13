@@ -1,6 +1,6 @@
 import { Main } from '../app.js';
 
-describe('Main', function() {
+describe('list of test for simpleHours function', function() {
     let main = new Main();
 
     it('should return "" for 0 hours', function() {
@@ -21,5 +21,10 @@ describe('Main', function() {
     it('should return "" for 5 hours', function() {
         const resultat = main.simpleHours(5);
         expect(resultat).toBe("");
+    });
+
+    it('should return "R" for 6 hours', function() {
+        const resultat = main.simpleHours(6);
+        expect(resultat).toBe("R");
     });
 });
