@@ -126,4 +126,9 @@ describe('list of test for blockOfFiveHours function', function() {
         const resultat = main.blockOfFiveHours(19);
         expect(resultat).toBe("RRR");
     });
+
+    it('should return "RRRR" for 20 hours', function() {
+        const resultat = main.blockOfFiveHours(20);
+        expect(resultat).toBe("RRRR");
+    });
 });    
