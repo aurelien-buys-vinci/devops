@@ -52,4 +52,9 @@ describe('list of test for simpleHours function', function() {
         const resultat = main.simpleHours(15);
         expect(resultat).toBe("");
     });
+
+    it('should return "R" for 16 hours', function() {
+        const resultat = main.simpleHours(16);
+        expect(resultat).toBe("R");
+    });
 });
