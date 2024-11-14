@@ -28,4 +28,16 @@ export class Main {
         }
         return result;
     };
+
+        FinalClock(hours, minutes, seconds) {
+        let result = "";
+        result += this.secondsLamp(seconds);
+        result += "\n";
+        result += this.blockOfFiveHours(hours);
+        result += "\n";
+        result += this.simpleHours(hours);
+        result += "\n";
+
     }
+
+
