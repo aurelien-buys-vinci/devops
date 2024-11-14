@@ -3,9 +3,11 @@ export class Main {
         if(minutes == 1) {
             return "Y";
         }else if(minutes == 2) {
-            return "Y";
+            return "YY";
         }else if(minutes == 3) {
-            return "Y";
+            return "YYY";
+        }else if(minutes == 4) {
+            return "YYYY";
         }
         return "";
     }

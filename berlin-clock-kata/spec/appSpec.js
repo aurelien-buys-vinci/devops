@@ -17,12 +17,12 @@ describe("SimpleMinute should return the minutes in the bottom row", function() 
         expect(result).toBe("Y");
     });
 
-    it("should return 'Y' for 2 minutes", function() {
+    it("should return 'YY' for 2 minutes", function() {
         let main = new Main();
 
         let result = main.SimpleMinute(2);
         
-        expect(result).toBe("");
+        expect(result).toBe("YY");
     });
 
     it("should return 'Y' for 3 minutes", function() {
@@ -30,6 +30,13 @@ describe("SimpleMinute should return the minutes in the bottom row", function() 
 
         let result = main.SimpleMinute(3);
         
-        expect(result).toBe("Y");
+        expect(result).toBe("YYY");
+    });
+    it("should return 'YYYY' for 4 minutes", function() {
+        let main = new Main();
+
+        let result = main.SimpleMinute(4);
+        
+        expect(result).toBe("YYYY");
     });
 });
