@@ -24,6 +24,10 @@ export class Main {
 
 
     BlockOfFiveMinute(Minutes) {
+        if(Minutes >=10){
+            return "YY"
+        }
+        
         if(Minutes >= 5){
             return "Y";
         }
