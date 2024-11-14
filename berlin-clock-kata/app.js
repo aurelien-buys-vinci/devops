@@ -42,8 +42,17 @@ export class Main {
         return row;
     };
 
-    FinalClock(hours, minutes, seconds) {
+    FinalClock() {
+        let date = new Date();
+
+        let hours = date.getHours();
+
+        let minutes = date.getMinutes();
+
+        let seconds = date.getSeconds();
+
         let result = "";
+        
         result += this.secondsLamp(seconds);
         result += "\n";
         result += this.blockOfFiveHours(hours);
