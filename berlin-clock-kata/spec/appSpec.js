@@ -185,5 +185,9 @@ describe('list of test for function BlockOfFiveMinute', function() {
         const resultat = main.BlockOfFiveMinute(4);
         expect(resultat).toBe("");
     });
+    it('should return "Y" for 5 Minute(s)', function() {
+        const resultat = main.BlockOfFiveMinute(5);
+        expect(resultat).toBe("Y");
+    });
 
 });
