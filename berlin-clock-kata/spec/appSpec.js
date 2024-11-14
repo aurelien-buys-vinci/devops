@@ -234,4 +234,9 @@ describe('list of test for function BlockOfFiveMinute', function() {
         expect(resultat).toBe("YYRY");
     });
 
+    it('should return "YYRY" for 45 Minute(s)', function() {
+        const resultat = main.BlockOfFiveMinute(45);
+        expect(resultat).toBe("YYRYYRYYR");
+    });
+
 });
