@@ -60,4 +60,12 @@ describe("SimpleMinute should return the minutes in the bottom row", function() 
         
         expect(result).toBe("YY");
     });
+
+    it("should return 'YYY' for 33 minutes", function() {
+        let main = new Main();
+
+        let result = main.SimpleMinute(33);
+        
+        expect(result).toBe("YYY");
+    });
 });
