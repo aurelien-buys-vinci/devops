@@ -20,7 +20,7 @@ describe("SimpleMinute should return the minutes in the bottom row", function() 
     it("should return 'YY' for 7 minutes", function() {
         let main = new Main();
 
-        let result = main.SimpleMinute(2);
+        let result = main.SimpleMinute(7);
         
         expect(result).toBe("YY");
     });
@@ -28,29 +28,36 @@ describe("SimpleMinute should return the minutes in the bottom row", function() 
     it("should return 'YYY' for 18 minutes", function() {
         let main = new Main();
 
-        let result = main.SimpleMinute(3);
+        let result = main.SimpleMinute(18);
         
         expect(result).toBe("YYY");
     });
     it("should return 'YYYY' for 49 minutes", function() {
         let main = new Main();
 
-        let result = main.SimpleMinute(4);
+        let result = main.SimpleMinute(49);
         
         expect(result).toBe("YYYY");
     });
     it("should return '' for 50 minutes", function() {
         let main = new Main();
 
-        let result = main.SimpleMinute(5);
+        let result = main.SimpleMinute(50);
         
         expect(result).toBe("");
     });
     it("should return 'Y' for 51 minutes", function() {
         let main = new Main();
 
-        let result = main.SimpleMinute(6);
+        let result = main.SimpleMinute(51);
         
         expect(result).toBe("Y");
+    });
+    it("should return 'YY' for 22 minutes", function() {
+        let main = new Main();
+
+        let result = main.SimpleMinute(22);
+        
+        expect(result).toBe("YY");
     });
 });
