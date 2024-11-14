@@ -21,4 +21,9 @@ export class Main {
         }
         return "";
     };    
+
+
+    BlockOfFiveMinute(Minutes) {
+        return "";
+    }; 
 }

@@ -166,3 +166,14 @@ describe('list of test for secondLamp function', function() {
         expect(resultat).toBe("");
     });
 });
+
+
+describe('list of test for function BlockOfFiveMinute', function() {
+    let main = new Main();
+
+    it('should return "" for 0 Minute(s)', function() {
+        const resultat = main.BlockOfFiveMinute(0);
+        expect(resultat).toBe("");
+    });
+
+});
