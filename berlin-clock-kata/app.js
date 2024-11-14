@@ -20,7 +20,8 @@ export class Main {
             return "R";
         }
         return "";
-    };    
+    }; 
+
     SimpleMinute(minutes) {
         let result = "";
         for (let i = 0; i < minutes%5; i++) {
@@ -28,6 +29,18 @@ export class Main {
         }
         return result;
     };
+
+    BlockOfFiveMinute(Minutes) {
+        let row = "";
+        for (let i = 1; i <= parseInt(Minutes/5); i++) {
+            if (i % 3 === 0) {
+                row += "R"; 
+            } else {
+                row += "Y"; 
+            }
+        }
+        return row;
+    }
 
         FinalClock(hours, minutes, seconds) {
         let result = "";
@@ -37,22 +50,15 @@ export class Main {
         result += "\n";
         result += this.simpleHours(hours);
         result += "\n";
+        result += this.BlockOfFiveMinute(minutes);
+        result += "\n";
+        result += this.SimpleMinute(minutes);
+        return result;
 
     }
 
 
 
 
-    BlockOfFiveMinute(Minutes) {
-        let row = "";
-        for (let i = 1; i <= parseInt(Minutes/5); i++) {
-          // For every third lamp, use 'R' for quarters, otherwise use 'Y'
-            if (i % 3 === 0) {
-                row += "R"; // Red lamp for quarters
-            } else {
-                row += "Y"; // Yellow lamp for other five-minute blocks
-            }
-        }
-        return row;
-    }
+    
 }
