@@ -244,3 +244,76 @@ describe("SimpleMinute should return the minutes in the bottom row", function() 
         expect(result).toBe("YYYY");
     });
 });
+
+describe('list of test for function BlockOfFiveMinute', function() {
+    let main = new Main();
+
+    it('should return "" for 0 Minute(s)', function() {
+        const resultat = main.BlockOfFiveMinute(0);
+        expect(resultat).toBe("");
+    });
+
+    it('should return "" for 1 Minute(s)', function() {
+        const resultat = main.BlockOfFiveMinute(1);
+        expect(resultat).toBe("");
+    });
+
+    it('should return "" for 4 Minute(s)', function() {
+        const resultat = main.BlockOfFiveMinute(4);
+        expect(resultat).toBe("");
+    });
+    it('should return "Y" for 5 Minute(s)', function() {
+        const resultat = main.BlockOfFiveMinute(5);
+        expect(resultat).toBe("Y");
+    });
+
+    it('should return "Y" for 6 Minute(s)', function() {
+        const resultat = main.BlockOfFiveMinute(6);
+        expect(resultat).toBe("Y");
+    });
+
+    it('should return "Y" for 9 Minute(s)', function() {
+        const resultat = main.BlockOfFiveMinute(9);
+        expect(resultat).toBe("Y");
+    });
+
+    it('should return "YY" for 10 Minute(s)', function() {
+        const resultat = main.BlockOfFiveMinute(10);
+        expect(resultat).toBe("YY");
+    });
+
+    it('should return "YY" for 12 Minute(s)', function() {
+        const resultat = main.BlockOfFiveMinute(12);
+        expect(resultat).toBe("YY");
+    });
+    
+    it('should return "YY" for 14 Minute(s)', function() {
+        const resultat = main.BlockOfFiveMinute(14);
+        expect(resultat).toBe("YY");
+    });
+
+    it('should return "YYR" for 15 Minute(s)', function() {
+        const resultat = main.BlockOfFiveMinute(15);
+        expect(resultat).toBe("YYR");
+    });
+
+    it('should return "YYR" for 16 Minute(s)', function() {
+        const resultat = main.BlockOfFiveMinute(16);
+        expect(resultat).toBe("YYR");
+    });
+
+    it('should return "YYR" for 19 Minute(s)', function() {
+        const resultat = main.BlockOfFiveMinute(19);
+        expect(resultat).toBe("YYR");
+    });
+    it('should return "YYRY" for 20 Minute(s)', function() {
+        const resultat = main.BlockOfFiveMinute(20);
+        expect(resultat).toBe("YYRY");
+    });
+
+    it('should return "YYRY" for 45 Minute(s)', function() {
+        const resultat = main.BlockOfFiveMinute(45);
+        expect(resultat).toBe("YYRYYRYYR");
+    });
+
+});
