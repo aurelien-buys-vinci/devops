@@ -190,4 +190,9 @@ describe('list of test for function BlockOfFiveMinute', function() {
         expect(resultat).toBe("Y");
     });
 
+    it('should return "Y" for 6 Minute(s)', function() {
+        const resultat = main.BlockOfFiveMinute(6);
+        expect(resultat).toBe("Y");
+    });
+
 });
