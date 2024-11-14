@@ -24,15 +24,15 @@ export class Main {
 
 
     BlockOfFiveMinute(Minutes) {
-        if(Minutes >=15){
-            return "YYY"
+        let row = "";
+        for (let i = 1; i <= parseInt(Minutes/5); i++) {
+          // For every third lamp, use 'R' for quarters, otherwise use 'Y'
+            if (i % 3 === 0) {
+                row += "R"; // Red lamp for quarters
+            } else {
+                row += "Y"; // Yellow lamp for other five-minute blocks
+            }
         }
-        if(Minutes >=10){
-            return "YY"
-        }
-        if(Minutes >= 5){
-            return "Y";
-        }
-        return "";
-    }; 
+        return row;
+    }
 }

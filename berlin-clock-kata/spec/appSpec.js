@@ -215,14 +215,23 @@ describe('list of test for function BlockOfFiveMinute', function() {
         expect(resultat).toBe("YY");
     });
 
-    it('should return "YY" for 15 Minute(s)', function() {
+    it('should return "YYR" for 15 Minute(s)', function() {
         const resultat = main.BlockOfFiveMinute(15);
-        expect(resultat).toBe("YYY");
+        expect(resultat).toBe("YYR");
     });
 
-    it('should return "YY" for 16 Minute(s)', function() {
+    it('should return "YYR" for 16 Minute(s)', function() {
         const resultat = main.BlockOfFiveMinute(16);
-        expect(resultat).toBe("YYY");
+        expect(resultat).toBe("YYR");
+    });
+
+    it('should return "YYR" for 19 Minute(s)', function() {
+        const resultat = main.BlockOfFiveMinute(19);
+        expect(resultat).toBe("YYR");
+    });
+    it('should return "YYRY" for 20 Minute(s)', function() {
+        const resultat = main.BlockOfFiveMinute(20);
+        expect(resultat).toBe("YYRY");
     });
 
 });
