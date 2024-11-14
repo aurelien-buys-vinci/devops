@@ -40,9 +40,9 @@ export class Main {
             }
         }
         return row;
-    }
+    };
 
-        FinalClock(hours, minutes, seconds) {
+    FinalClock(hours, minutes, seconds) {
         let result = "";
         result += this.secondsLamp(seconds);
         result += "\n";
@@ -54,11 +54,5 @@ export class Main {
         result += "\n";
         result += this.SimpleMinute(minutes);
         return result;
-
-    }
-
-
-
-
-    
-}
+    };
+};
